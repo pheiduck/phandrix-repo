@@ -7,6 +7,7 @@ jobs:
   build_package:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@main
       - name: install_build-dependencies
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
@@ -61,3 +62,6 @@ jobs:
           popd
           sudo pacman-key --init
           sudo pacman-key --populate archlinux manjaro
+      - name: Download Packages and add them to Repo
+        run: |
+          bash ci/gh-downloader
