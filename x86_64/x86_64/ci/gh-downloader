@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-while IFS="" read -r repo || [ -n "$repo" ]
-do
-  gh release --repo "$repo" download --pattern '*.zst'
-done < ci/repo-list.txt

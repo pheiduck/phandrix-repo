@@ -1,2 +1,0 @@
-https://github.com/pheiduck/vim-git
-https://github.com/pheiduck/curl-daily
