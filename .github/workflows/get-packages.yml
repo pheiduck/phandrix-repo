@@ -68,7 +68,7 @@ jobs:
       - name: Download Packages and add them to Repo
         run: |
           pushd x86_64
-          bash ci/gh-downloader
+          bash ../ci/gh-downloader
           repo-add --prevent-downgrade phandrix-arch-repo.db.tar.gz *.pkg.tar.zst
           rm phandrix-arch-repo.db phandrix-arch-repo.files
           mv phandrix-arch-repo.db.tar.gz phandrix-arch-repo.db
