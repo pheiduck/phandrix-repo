@@ -1,7 +1,6 @@
 name: 'Manjaro Package CI'
 
 on:
-  push:
   schedule:
     - cron: "* 0 * * *"
   
@@ -67,7 +66,6 @@ jobs:
           sudo pacman-key --populate archlinux manjaro
       - name: Download Packages and add them to Repo
         run: |
-          mkdir -p x86_64
           pushd x86_64
           bash ../ci/gh-downloader
           repo-add --new --remove --prevent-downgrade phandrix-arch-repo.db.tar.gz *.pkg.tar.zst
