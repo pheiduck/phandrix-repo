@@ -1,7 +1,6 @@
 name: 'Manjaro Package CI'
 
 on:
-  push:
   schedule:
     - cron: "* 0 * * *"
   
