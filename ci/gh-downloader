@@ -1,6 +1,15 @@
 #!/usr/bin/env sh
 
-while IFS="" read -r repo || [ -n "$repo" ]
-do
+REPO_LIST="../ci/repo-list.txt"
+if [ ! -f "$REPO_LIST" ]; then
+  echo "File $REPO_LIST not found!"
+  exit 1
+fi
+
+while IFS= read -r repo || [ -n "$repo" ]; do
+  if [ -z "$repo" ]; then
+    continue
+  fi
+  
   gh release --repo "$repo" download --skip-existing --pattern '*.zst'
-done < ../ci/repo-list.txt
+done < "$REPO_LIST"
