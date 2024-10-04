@@ -2,7 +2,7 @@
 
 REPO_LIST="../ci/repo-list.txt"
 if [ ! -f "$REPO_LIST" ]; then
-  echo "File $REPO_LIST not found!"
+  printf "File %s not found!\n" "$REPO_LIST"
   exit 1
 fi
 
