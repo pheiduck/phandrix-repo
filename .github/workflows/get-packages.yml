@@ -3,7 +3,11 @@ name: 'Manjaro Package CI'
 on:
   schedule:
     - cron: "* 0 * * *"
-  
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
   get_package:
     runs-on: ubuntu-latest
